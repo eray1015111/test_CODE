@@ -1,26 +1,24 @@
 /*
-  ==============================================================================
-
+  =============================================================================
     This file contains the basic startup code for a JUCE application.
-
-  ==============================================================================
+  =============================================================================
 */
 
 #include <JuceHeader.h>
 #include "MainComponent.h"
 
-//==============================================================================
+//=============================================================================
 class HelloWorldApplication  : public juce::JUCEApplication
 {
 public:
-    //==============================================================================
+    //=========================================================================
     HelloWorldApplication() {}
 
     const juce::String getApplicationName() override       { return ProjectInfo::projectName; }
     const juce::String getApplicationVersion() override    { return ProjectInfo::versionString; }
     bool moreThanOneInstanceAllowed() override             { return true; }
 
-    //==============================================================================
+    //=========================================================================
     void initialise (const juce::String& commandLine) override
     {
         // This method is where you should put your application's initialisation code..
@@ -35,7 +33,7 @@ public:
         mainWindow = nullptr; // (deletes our window)
     }
 
-    //==============================================================================
+    //=========================================================================
     void systemRequestedQuit() override
     {
         // This is called when the app is being asked to quit: you can ignore this
@@ -50,7 +48,7 @@ public:
         // the other instance's command-line arguments were.
     }
 
-    //==============================================================================
+    //=========================================================================
     /*
         This class implements the desktop window that contains an instance of
         our MainComponent class.
@@ -100,6 +98,6 @@ private:
     std::unique_ptr<MainWindow> mainWindow;
 };
 
-//==============================================================================
+//=============================================================================
 // This macro generates the main() routine that launches the app.
 START_JUCE_APPLICATION (HelloWorldApplication)
